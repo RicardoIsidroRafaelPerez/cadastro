@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=0">
+	<link rel="stylesheet" href="jquery_mobile.css" />
+	<script src="jquery.js"></script>
+	<script src="jquery_mobile.js"></script>
+	<title>Clientes</title>
+</head>
+<body>
+
+	<a href="tabela.php">Ver datos</a>
+
+	<form id="formClientes">
+		<div id="control">
+			<div class="control-group">
+				<div class="cad-titulo">
+					<span>Clientes</span>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">
+					Nombre
+				</label>
+				<div class="controls">
+					<input type="text" name="nom" id="nom" class="campos">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">
+					CPF
+				</label>
+				<div class="controls">
+					<input type="text" name="cpf" id="cpf" class="campos">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">
+					RG
+				</label>
+				<div class="controls">
+					<input type="text" name="rg" id="rg" class="campos">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">
+					Tel
+				</label>
+				<div class="controls">
+					<input type="text" placeholder="(11) 8888-8888" name="tel" id="tel" class="campos">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">
+					Email
+				</label>
+				<div class="controls">
+					<input type="text" name="email" id="email" class="campos">
+				</div>
+			</div>
+			<div class="control-group">
+				<button onclick="salvar()" type="submit" class="btn btn-success"><span>Salvar</span></button>
+			</div>
+		</div>
+	</form>
+
+</body>
+
+</html>
+
+<script>
+	function salvar() {
+		var formula = $('#formClientes').serialize();
+
+		$.ajax({
+			type: 'POST',
+			data: formula,
+			url: 'cadastro.php',
+			success: function(data){
+				if (data == '' || data = 0) {
+					alert('Error al obtener datos');
+					window.location = "";
+				}
+
+				if (data == 1) {
+					alert('Registro exitoso');
+					window.location = "";
+				}
+			}
+		})
+	}
+</script>

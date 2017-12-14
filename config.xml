@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget    xmlns     = "http://www.w3.org/ns/widgets"
+		   xmlns:gap = "http://phonegap.com/ns/1.0"
+		   id        = "com.phonegap.helloworld"
+		   version   = "1.0.0">
+
+    <name>Cadastro</name>
+
+    <description>
+    	Responsable de los clientes.
+    </description>
+
+    <author href="http://phonegap.com" email="support@phonegap.com">
+    	Phonegap Team
+    </author>
+
+    <feature name="http://api.phonegap.com/1.0/device" />
+
+    <preference name="permissions" value="true"/>
+
+    <access origin="http://127.0.0.1:90"/>
+
+</widget>
